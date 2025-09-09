@@ -2,7 +2,13 @@
   margin-top: 50px;
 }
 
-#blog a {
-  color: #ffffff;
-  margin-top: 50px;
+a,
+a:visited,
+a:active {
+    color: #219ADB;
+    text-decoration: none;
+}
+a:hover {
+    color: #91a4d2;
+    text-decoration: underline;
 }

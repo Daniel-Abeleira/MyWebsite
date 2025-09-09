@@ -19,3 +19,6 @@ pub use navbar::Navbar;
 
 mod portfolio;
 pub use portfolio::Portfolio;
+
+mod profile;
+pub use profile::Profile;
