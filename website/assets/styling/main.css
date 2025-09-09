@@ -2,7 +2,17 @@ body {
     background-color: #0f1116;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+p {
+    margin-left: 400;
+    margin-right: 400px;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 #hero {

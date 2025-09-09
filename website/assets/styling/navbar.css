@@ -14,3 +14,18 @@
   cursor: pointer;
   color: #91a4d2;
 }
+
+#bottom-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #222; /* dark grey */
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    z-index: 100;
+}

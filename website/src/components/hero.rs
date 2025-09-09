@@ -5,20 +5,12 @@ const HEADER_SVG: Asset = asset!("/assets/header.svg");
 #[component]
 pub fn Hero() -> Element {
     rsx! {
-        // We can create elements inside the rsx macro with the element name followed by a block of attributes and children.
-        div {
-            // Attributes should be defined in the element before any children
-            id: "hero",
-            // After all attributes are defined, we can define child elements and components
-            img { src: HEADER_SVG, id: "header" }
-            div { id: "links",
-                // The RSX macro also supports text nodes surrounded by quotes
-                a { href: "https://dioxuslabs.com/learn/0.6/", "📚 Learn Dioxus" }
-                a { href: "https://dioxuslabs.com/awesome", "🚀 Awesome Dioxus" }
-                a { href: "https://github.com/dioxus-community/", "📡 Community Libraries" }
-                a { href: "https://github.com/DioxusLabs/sdk", "⚙️ Dioxus Development Kit" }
-                a { href: "https://marketplace.visualstudio.com/items?itemName=DioxusLabs.dioxus", "💫 VSCode Extension" }
-                a { href: "https://discord.gg/XgGxMSkvUM", "👋 Community Discord" }
+        section { class: "hero-section",
+            div { class: "hero-content",
+                h1 { style: "text-align: center;", "Welcome to Daniel Abeleira's Website!" }
+                p { style: "text-align: justify;",
+                    "Hi, I'm Daniel—a passionate programmer who loves building creative solutions with Rust and web technologies. Explore my projects, read my blog, or get in touch!"
+                }
             }
         }
     }

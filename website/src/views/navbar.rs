@@ -17,14 +17,24 @@ pub fn Navbar() -> Element {
             Link { to: Route::Home {}, "Home" }
             Link {
                 to: Route::Blog {
-                    id: "hello-world".to_string(),
+                    id: "index".to_string(),
                 },
                 "Blog"
             }
+            Link { to: Route::Portfolio {}, "Portfolio" }
         }
 
         // The `Outlet` component is used to render the next component inside the layout. In this case, it will render either
         // the [`Home`] or [`Blog`] component depending on the current route.
         Outlet::<Route> {}
+
+        // Bottom bar with licenses and attribution
+        div {
+            id: "bottom-bar",
+            style: "text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #888;",
+            "I programmed this website's full stack using only Rust (Dioxus and Fly.io)."
+            br {}
+            "Fonts used: 'Segoe UI', Tahoma, Geneva, Verdana"
+        }
     }
 }
