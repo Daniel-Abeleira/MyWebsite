@@ -18,7 +18,7 @@ mod views;
 #[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
-    #[route("/")]
+    #[route("/home")]
     Home {},
     #[route("/blog/:id")]
     Blog { id: String },
