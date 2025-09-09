@@ -1,0 +1,22 @@
+[application]
+
+[web.app]
+
+# HTML title tag content
+title = "website"
+
+# include `assets` in web platform
+[web.resource]
+"blog_posts" = { path = "assets/blog_posts", include = ["**/*"] }
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
