@@ -4,9 +4,10 @@ use dioxus::prelude::*;
 pub enum PortfolioProject {
     FantasyWorldGenerator,
     FPSPlayground,
-    SoftwareRasterizer,
+    SoftwareRaytracer,
     DirectXRenderer,
     AgainstTheDarkness,
+    ZombieGame,
 }
 
 struct ProjectInfo {
@@ -20,31 +21,38 @@ const PROJECTS: &[ProjectInfo] = &[
     ProjectInfo {
         key: PortfolioProject::AgainstTheDarkness,
         title: "Against The Darkness",
-        description: "A story-driven RPG project with unique mechanics and dark fantasy themes.",
+        description: "A couch-coop game made with a team of fellow students in Unity.",
         image_url: Some(asset!("/assets/images/ATD.png")),
     },
     ProjectInfo {
-        key: PortfolioProject::SoftwareRasterizer,
-        title: "Software Rasterizer",
-        description: "A pure software-based 3D renderer for learning graphics fundamentals.",
-        image_url: None,
+        key: PortfolioProject::SoftwareRaytracer,
+        title: "Software Raytracer",
+        description: "A pure C++ 3D raytracer.",
+        image_url: Some(asset!("/assets/images/RT.png")),
     },
     ProjectInfo {
         key: PortfolioProject::DirectXRenderer,
         title: "DirectX Renderer",
-        description: "A custom renderer built on DirectX for real-time graphics and effects.",
-        image_url: None,
+        description: "A renderer built on DirectX with C++.",
+        image_url: Some(asset!("/assets/images/DX.png")),
+    },
+    ProjectInfo {
+        key: PortfolioProject::ZombieGame,
+        title: "Zombie Game",
+        description: "An autonomous agent for a zombie survival game, written in C++.",
+        image_url: Some(asset!("/assets/images/ZombieGame.png")),
     },
     ProjectInfo {
         key: PortfolioProject::FantasyWorldGenerator,
         title: "Fantasy World Generator",
-        description: "A procedural world generator for fantasy settings, featuring terrain, biomes, and lore creation.",
+        description: "A procedural world generator with history simulation made in Unity.",
         image_url: Some(asset!("/assets/images/FWHG.png")),
     },
     ProjectInfo {
         key: PortfolioProject::FPSPlayground,
         title: "FPS Playground",
-        description: "A first-person shooter engine experiment with custom physics and rendering.",
+        description:
+            "A level editor with autonomous bots made for FPS or TPS level designers in Unity.",
         image_url: Some(asset!("/assets/images/FPSPG.png")),
     },
 ];
@@ -57,14 +65,34 @@ fn project_detail(project: &PortfolioProject) -> Element {
         PortfolioProject::FPSPlayground => rsx!(
             p { "This is a sample FPS Playground project." }
         ),
-        PortfolioProject::SoftwareRasterizer => rsx!(
+        PortfolioProject::SoftwareRaytracer => rsx!(
             p { "This is a sample Software Rasterizer project." }
         ),
         PortfolioProject::DirectXRenderer => rsx!(
             p { "This is a sample DirectX Renderer project." }
         ),
         PortfolioProject::AgainstTheDarkness => rsx!(
-            p { "This is a sample Against The Darkness project." }
+            div {
+                style: "display: flex; flex-direction: column; align-items: center; justify-content: center;",
+                div {
+                    dangerous_inner_html: r#"
+                        <iframe
+                            frameborder='0'
+                            src='https://itch.io/embed/2543310?bg_color=000000&amp;fg_color=e8e7e3&amp;link_color=fb922b&amp;border_color=e42832'
+                            width='552'
+                            height='167'
+                        >
+                            <a href='https://delthor-games.itch.io/game-project-group-2'>
+                                Against the Darkness by Delthor Games, MariusBrill, ThisIsLiam, drakkar2guerre
+                            </a>
+                        </iframe>
+                    "#,
+                }
+                p { "This is a sample Against The Darkness project." }
+            }
+        ),
+        PortfolioProject::ZombieGame => rsx!(
+            p { "This is a sample Zombie Game project." }
         ),
     }
 }

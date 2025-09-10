@@ -7,9 +7,9 @@ pub fn Hero() -> Element {
     rsx! {
         section { class: "hero-section",
             div { class: "hero-content",
-                h1 { style: "text-align: center;", "Welcome to Daniel Abeleira's Website!" }
+                h1 { style: "text-align: center;", "Daniel Abeleira - C++/C#(Unity)/Rust Gameplay Programmer" }
                 p { style: "text-align: justify;",
-                    "Hi, I'm Daniel—a passionate programmer who loves building creative solutions with Rust and web technologies. Explore my projects, read my blog, or get in touch!"
+                    "Hi, I'm Daniel, welcome to my website. You can use the navigation bar at the top to explore my portfolio and profile. Feel free to reach out if you'd like to connect! My email is dani.abeleira@gmail.com."
                 }
             }
         }
